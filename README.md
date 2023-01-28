@@ -1,2 +1,2 @@
 # Bluxe
-Bluxe- messaging app
+Bluxe - messaging app
