@@ -11,4 +11,4 @@ bin           = @["bluxe"]
 # Dependencies
 
 requires "nim >= 1.6.8"
-requires "graphql >= 0.2.24"
+requires "prologue >= 0.6.4"
