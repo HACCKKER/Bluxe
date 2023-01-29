@@ -1,4 +1,4 @@
 export interface IHeader {
-    title: string,
-    description: string
+    description: string, // Описание сайта
+    title_description: string // Описание тайтле(title)
 }
