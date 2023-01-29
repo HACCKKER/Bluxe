@@ -1,4 +1,4 @@
-import Header from "../../components/meta/Header";
+import Header from "../../appComponents/Logic/Meta/Header";
 
 export default function Register() {
     return (

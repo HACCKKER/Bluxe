@@ -1,7 +1,7 @@
 import styles from '../../styles/components/NavBar.module.scss';
 import { FC, PropsWithChildren } from 'react'
 
-const NavBar: FC<PropsWithChildren> = ({children}) => {
+const AppNavBar: FC<PropsWithChildren> = ({children}) => {
   return (
     <div className={styles.NavBar}>
         <header className={styles.nav}>
@@ -29,4 +29,4 @@ const NavBar: FC<PropsWithChildren> = ({children}) => {
     </div>
   )
 }
-export default NavBar
+export default AppNavBar

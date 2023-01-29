@@ -1,5 +1,5 @@
-import Header from '../components/meta/Header'
-import NavBar from '../components/app/NavBar'
+import Header from '../appComponents/Logic/Meta/Header'
+import NavBar from '../appComponents/Ui/NavBars/AppNavBar/AppNavBar'
 import styles from '../styles/pages/Home.module.scss'
 
 export default function Home() {
