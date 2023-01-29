@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Roboto:wght@300;400&display=swap');
+
+.nav {
+    display: inline-flex;
+    position: fixed;
+    background: #101011;
+    width: 100%;
+    height: 78px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+	position: fixed;
+    padding-top: 5px;
+	left: 0;
+	width: 100px;
+	height: 100%;
+	padding: 0;
+    background: #101011;
+}
