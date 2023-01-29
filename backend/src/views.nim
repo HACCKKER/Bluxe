@@ -4,7 +4,7 @@ import prologue
 proc hello*(ctx: Context) {.async.} =
     resp("<h1>Hello, Prologue!</h1>")
 
-proc userAdd*(ctx: Context) {.async.} =
+proc userReg*(ctx: Context) {.async.} =
     if ctx.request.reqMethod == HttpPost and ctx.request.contentType == "Json":
         resp("ok")
     else:
