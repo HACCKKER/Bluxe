@@ -1,5 +1,18 @@
-# This is just an example to get you started. A typical binary package
-# uses this file as the main entry point of the application.
+import prologue
+
+import ./urls
+
+let
+    env = loadPrologueEnv(".env")
+    settings = newSettings(
+        appName = env.getOrDefault("appName", "Prologue"),
+        debug = env.getOrDefault("debug", true),
+        port = Port(env.getOrDefault("port", 8080)),
+        secretKey = env.getOrDefault("secretKey", "")
+    )
 
 when isMainModule:
-  echo("Hello, World!")
+    var app = newApp(settings = settings)
+    
+    app.addRoute(urls.urlPatterns, "")
+    app.run()
