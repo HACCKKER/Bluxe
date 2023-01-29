@@ -1,4 +1,4 @@
-import styles from '../../styles/components/NavBar.module.scss';
+import styles from '../../../../styles/appComponents/UiApp/NavBars/AppNavBar.module.scss';
 import { FC, PropsWithChildren } from 'react'
 
 const AppNavBar: FC<PropsWithChildren> = ({children}) => {
