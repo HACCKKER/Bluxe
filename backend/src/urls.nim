@@ -5,5 +5,5 @@ import ./views
 
 let urlPatterns* = @[
     pattern("/", hello),
-    pattern("/user/add", userAdd)
+    pattern("/user/register", userReg, HttpPost)
 ]
