@@ -1,0 +1,26 @@
+version: '3.9'
+
+volumes:
+    sqlite-db:
+
+services:
+    backend:
+        build: backend
+        ports:
+            - "80:8080"
+        volumes:
+            - sqlite-db:/home/appuser
+        restart: always
+        # depends_on:
+        #     - reverseproxy
+    # reverseproxy:
+    #     build: nginx
+    #     volumes:
+    #         - "${MY_KEY}:/etc/ssl/private"
+    # frontend:
+    #     build: frontend
+    #     expose:
+    #         - 8080
+    #     restart: always
+    #     depends_on:
+    #         - reverseproxy
