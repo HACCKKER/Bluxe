@@ -3,15 +3,17 @@ import { FC, PropsWithChildren } from 'react'
 
 const MainNavBar: FC<PropsWithChildren> = ({children}) => {
   return (
-    <div className={styles.NavBar}>
-        <header className={styles.nav}>
-        </header>
-        <nav className={styles.menu}>
-        </nav> 
+    <header className={styles.Header}>        
+      <nav className={styles.Nav}>
+        <a></a>
         <div>
-            {children}
+
         </div>
-    </div>
+        <div>
+          
+        </div>
+      </nav>
+    </header>
   )
 }
 export default MainNavBar
