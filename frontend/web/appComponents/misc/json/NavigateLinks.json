@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "Link": "/download",
+        "Text": "Download"
+    },
+    {
+        "id": 2,
+        "Link": "/nitro",
+        "Text": "Nitro"
+    },
+    {
+        "id": 3,
+        "Link": "/servers",
+        "Text": "Discover"
+    },
+    {
+        "id": 4,
+        "Link": "/safetycenter",
+        "Text": "Safety"
+    },
+    {
+        "id": 5,
+        "Link": "/hc/{user_lang}",
+        "Text": "Support"
+    },
+    {
+        "id": 6,
+        "Link": "/blog",
+        "Text": "Blog"
+    },
+    {
+        "id": 7,
+        "Link": "/jobs",
+        "Text": "Careers"
+    }
+]
