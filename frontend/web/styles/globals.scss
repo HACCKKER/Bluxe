@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceland&family=Roboto:wght@300;400&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+@media screen and (min-width: 768px){
+    :root {
+        --num-grid-columns: 8;
+        --page-gutter: 40px;
+        --section-spacing: 80px;
+    }
+}
 
 * {
     margin: 0;
@@ -10,10 +16,6 @@ body, html, #__next {
     height: 100%;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
-}
-
-body::-webkit-scrollbar {
-    width: 0;
 }
 
 a {

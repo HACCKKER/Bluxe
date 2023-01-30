@@ -7,15 +7,15 @@ export default function Home() {
     <>
       <Header description='' title_description='Ваше место для общения и отдыха' />
       <div className={styles.MainContainer}>
-        <div className={styles.Header}>
+        <div className={styles.HeaderContainer}>
           <MainNavBar />
           <div className={styles.HeaderContent}>
 
           </div>
           <div className={styles.HeaderBackground}>
-            <img src='./' alt='' />
-            <img src='./' alt='' />
-            <img src='./' alt='' />
+            <img className={styles.BackgroundImages} src='./assets/Styles.svg' alt='' />
+            <img className={styles.ForegroundLeft} src='./assets/Tapok.svg' alt='' />
+            <img className={styles.ForegroundRight} src='./assets/Stol.svg' alt='' />
           </div>
         </div>
         <div className={styles.Main}>
