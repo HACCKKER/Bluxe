@@ -7,6 +7,18 @@
     }
 }
 
+@media screen and (min-width: 1024px) {
+    :root {
+        --num-grid-columns: 12;
+        --section-spacing: 120px;
+    }
+}
+
+:root {
+    --white: #f6f6f6;
+    --not-quite-black: #23272a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,9 +30,21 @@ body, html, #__next {
     -ms-overflow-style: none;
 }
 
+body {
+    text-rendering: optimizeLegibility;
+}
+
 a {
     color: #F8F8F8;
     font-family: 'Iceland', cursive;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
 }

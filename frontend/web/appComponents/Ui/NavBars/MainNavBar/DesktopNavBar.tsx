@@ -25,7 +25,7 @@ const DesktopNavBar = () => {
           <NavigateLinks />
         </div>
         <div className={styles.AppButton}> 
-          <Link href='/'>
+          <Link className={styles.AppButtonText} href='/'>
             Login
           </Link>
         </div>
