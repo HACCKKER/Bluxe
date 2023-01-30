@@ -25,7 +25,7 @@ const MainNavBar = () => {
           <NavigateLinks />
         </div>
         <div className={styles.AppButton}> 
-          <Link href='/'>
+          <Link href='/auth/register'>
             Login
           </Link>
         </div>

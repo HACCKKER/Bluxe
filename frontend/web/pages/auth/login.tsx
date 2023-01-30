@@ -1,10 +1,10 @@
 import Header from "../../appComponents/Logic/Meta/Header";
 
-export default function Auth() {
+export default function Login() {
 
     return (
       <>
-        <Header title='Bluxe' description='Auth' />
+        <Header description='Auth' />
       </>
     )
   }
