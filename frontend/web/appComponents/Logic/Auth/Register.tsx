@@ -1,8 +1,25 @@
 import { FC } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import styles from '../../../styles/appComponents/LogicApp/Register/Register.module.scss'
-import BackButton from "../../Ui/Auth/Buttons/BackButton/BackButton";
+import BackButton from "../../Ui/Auth/Buttons/BackButtonUi/BackButton";
+import FieldForm from "../../Ui/Auth/Field/FieldForm";
+import { IAuthFields } from "./interfaces/reg-login-form.interface";
 
 const RegisterComponent: FC = () => {
+
+    const{
+    register,
+    formState: {errors},
+    handleSubmit,
+    reset
+    } = useForm<IAuthFields>({
+        mode: "onSubmit"
+    })
+
+    const onSubmit:SubmitHandler<IAuthFields> = (data) =>{
+        reset()
+    }
+
     return(
         <div className={styles.wrapper}>
             <div className={styles.loginForm}>
@@ -16,7 +33,33 @@ const RegisterComponent: FC = () => {
 
                     <div className={styles.formBlock}>
                         <div className={styles.emailBlock}>
+                            <label className={styles.formLabel}>Электронаня почта</label>
                             
+                            <FieldForm
+                            {...register('email', {
+                                required: true,
+
+                            })}
+                            />
+
+                            <label className={styles.formLabel}>Имя пользователя</label>
+                            <FieldForm
+                            {...register('name', {
+                                required: true,
+
+                            })}
+                            />
+
+                             <label className={styles.formLabel}>Пароль</label>
+                            
+                            <FieldForm
+                            {...register('password', {
+                                required: true,
+
+                            })}
+                            />
+
+
                         </div>
                     </div>
                 </form>

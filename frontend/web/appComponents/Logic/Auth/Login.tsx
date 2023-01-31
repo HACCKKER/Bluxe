@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { IUser } from './interfaces/login.interface';
+import { IAuthFields } from './interfaces/reg-login-form.interface';
 import styles from '../../../styles/appComponents/LogicApp/Login/Login.module.scss'
 
-const Login: FC<IUser> = ({email, password}) => {
+const Login: FC = () => {
     return(
         <div className={styles.wrapper}>
             <div className={styles.loginForm}>
