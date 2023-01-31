@@ -89,6 +89,9 @@
 }
 
 .ButtonDownload {
+    svg {
+        margin-right: 6px;    
+    }
     margin-right: 24px;
     margin-top: 24px;
     border-radius: 28px;
@@ -105,6 +108,127 @@
     align-items: center;
     box-sizing: border-box;
     transition-duration: 0.2s;
+}
+
+.ButtonDownload:hover {
+    box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+    color: #5865f2;
+    color: var(--brand);
+}
+
+.FormContainer {
+    @media screen and (min-width: 1024px) {
+        align-items: center;
+    }
+    @media screen and (max-width: 768px) {
+        align-items: flex-start;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+    flex-direction: column;
+}
+
+.DocumentContainer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.Form, .Username {
+    width: 100%;
+    background-color: #f6f6f6;
+    background-color: var(--off-white);
+}
+
+.Form {
+    max-width: 380px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    border-radius: 28px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.Username {
+    margin-left: 32px;
+    color: #23272a;
+    color: var(--not-quite-black);
+    border: none;
+    outline: none;
+}
+
+.RegisterButton {
+    background-color: #5865f2;
+    background-color: var(--brand);
+    color: #fff;
+    color: var(--white);
+    border-radius: 50%;
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    transition-property: background-color,color,-webkit-box-shadow;
+    transition-property: background-color,color,box-shadow;
+    transition-property: background-color,color,box-shadow,-webkit-box-shadow;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    margin: 9px;
+    padding: 7px 18px;
+}
+
+.RegisterButton:hover {
+    box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+    background-color: hsl(235,86.1%,71.8%);
+    background-color: hsl(235,calc(var(--saturation-factor, 1)*86.1%),71.8%);
+}
+
+.ErrorTextForm {
+    position: absolute;
+    bottom: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.Error {
+    background-color: #fff;
+    background-color: var(--white);
+    border-radius: 4px;
+
+    padding: 12px 20px;
+}
+
+.ErrorText {
+    font-size: 14px;
+    line-height: 18px;    
+    color: #c80000;
+}
+
+.Arrow {
+    width: 24px;
+    height: 24px;
+}
+
+.DocumentText {
+    color: #fff;
+    color: var(--white);
+    font-size: 14px;
+    line-height: 18px;
+    .Link {
+        text-decoration: underline;
+    }
 }
 
 .ButtonOpenBrowser {

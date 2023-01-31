@@ -15,9 +15,12 @@
 }
 
 :root {
+    --off-white: #f6f6f6;
     --white: #f6f6f6;
     --not-quite-black: #23272a;
     --page-max-width: 1260px;
+    --brand: #5865f2;
+    --brand-gradient: linear-gradient(90deg,#8ea1e1,#7289da);
 }
 
 * {

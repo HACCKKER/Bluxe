@@ -1,13 +1,22 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useRef} from 'react'
 import Header from '../appComponents/Logic/Meta/Header'
 import MainNavBar from '../appComponents/Ui/NavBars/MainNavBar/MainNavBar'
 import styles from '../styles/pages/Home.module.scss'
-import GetUserSystems from '../appComponents/Logic/Assets/GetUserSystems'
 
 export default function Home() {
-  const [MenuActive, setMenuActive] = useState(false)
-  console.log(GetUserSystems())
+  const [MenuActive, setMenuActive] = useState(false);
+  const [ErrorInputUsername, setErrorInputUsername] = useState(false)
+  const InputUsername = useRef(null)
+
+  const ValidateUsernameInput = () => {
+    if (InputUsername.current.value) {
+      console.log(InputUsername.current.value)
+      setErrorInputUsername(false)
+    } else {
+      setErrorInputUsername(true)
+    }
+  }
   return (
     <>
       <Header description='Bluxe' title_description='Ваше место для общения и отдыха' />
@@ -28,8 +37,49 @@ export default function Home() {
               </div>
               {
               MenuActive ? 
-                <div>
-                  1
+                <div className={styles.FormContainer}>
+                  <form className={styles.Form}>
+                    {
+                      ErrorInputUsername ?
+                        <div className={styles.ErrorTextForm}>
+                          <div className={styles.Error}>
+                            <a className={styles.ErrorText}>
+                              Полегче, дружище. Сначала назовитесь.
+                            </a>
+                          </div>
+                          <svg width="16" height="9" viewBox="0 0 16 9">
+                            <path d="M7.99986 9L0.803711 0H15.196L7.99986 9Z" fill="#FFFFFF"></path>
+                          </svg>
+                        </div>
+                      :
+                      <></>
+                    }
+                    <input 
+                      type='text' 
+                      id='input_username'
+                      className={styles.Username} 
+                      ref={InputUsername}
+                      placeholder='Введите имя пользователя'/>
+                    <button 
+                      type='button'
+                      className={styles.RegisterButton}
+                      onClick={ValidateUsernameInput}>
+                      <img className={styles.Arrow} src='./assets/Arrow.svg' alt='->' />
+                    </button>
+                  </form>
+                  <div className={styles.DocumentContainer}>
+                    <div className={styles.DocumentText}>
+                      <a> Регистрируясь, вы соглашаетесь с </a>
+                      <Link className={styles.Link} href=''> 
+                        Условиями Использования
+                      </Link>
+                      <a> и </a>
+                      <Link className={styles.Link} href=''>
+                        Политикой Конфиденциальности
+                      </Link>
+                      <a> Bluxe</a>
+                    </div>
+                  </div>
                 </div> 
               :             
                 <div className={styles.HeaderContainerButton}>
@@ -42,9 +92,12 @@ export default function Home() {
                           <path d="M18 18.001V20.001H6V18.001H4V20.001C4 21.103 4.897 22.001 6 22.001H18C19.104 22.001 20 21.103 20 20.001V18.001H18Z"></path>
                         </g>
                       </svg>
-                      загрузить для 
+                      загрузить для Windows
                   </Link>
-                  <button className={styles.ButtonOpenBrowser} id='ButtonOpenWeb'>
+                  <button 
+                  onClick={() => setMenuActive(true)} 
+                  className={styles.ButtonOpenBrowser} 
+                  id='ButtonOpenWeb'>
                     <a>Открыть Bluxe в браузере</a>
                   </button>
                 </div>
