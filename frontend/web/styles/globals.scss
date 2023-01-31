@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 @media screen and (min-width: 768px){
     :root {
         --num-grid-columns: 8;
@@ -17,6 +17,7 @@
 :root {
     --white: #f6f6f6;
     --not-quite-black: #23272a;
+    --page-max-width: 1260px;
 }
 
 * {
@@ -34,7 +35,7 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-a {
+a, h1, h2, h3, h4, h5, h6, p {
     color: #F8F8F8;
     font-family: 'Iceland', cursive;
     font-family: 'Roboto', sans-serif;

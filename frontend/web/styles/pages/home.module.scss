@@ -21,9 +21,115 @@
     }
 }
 
-.HeaderContent {
-
+.HeroContainer {
+    padding-top: 56px;
+    padding-top: var(--section-spacing);
+    padding-bottom: 56px;
+    padding-bottom: var(--section-spacing);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
+.HeroBody {
+    z-index: 1;
+    grid-column: span 4;
+    max-width: 780px;
+    min-height: 310px;
+    max-height: 470px;
+    @media screen and (min-width: 1024px) {
+        grid-column: 3/span 8;
+        text-align: center; 
+    }
+    @media screen and (min-width: 768px) {
+        grid-column: span 5;  
+    }
+}
+
+.HeaderText {
+    color: #fff;
+    color: var(--white);
+    @media screen and (min-width: 768px) {
+        margin-bottom: 8px; 
+    }
+}
+
+.h1 {
+    font-weight: 800;
+    @media screen and (min-width: 768px) {
+        font-size: 56px;  
+    }
+}
+
+.HeroSubtitle {
+    width: 780px;
+    font-size: 20px;
+    font-size: clamp(16px,2vw,20px);
+    line-height: 1.625;
+    @media screen and (min-width: 1024px) {
+        margin-top: 40px;
+    }
+    @media screen and (min-width: 768px) {
+        margin-top: 40px;
+    }
+}
+
+.HeaderContainerButton {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;  
+    @media screen and (min-width: 1024px) {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+.ButtonDownload {
+    margin-right: 24px;
+    margin-top: 24px;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    background-color: #fff;
+    background-color: var(--white);
+    color: #23272a;
+    color: var(--not-quite-black);
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    transition-duration: 0.2s;
+}
+
+.ButtonOpenBrowser {
+    margin-top: 24px;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    background-color: #23272a;
+    background-color: var(--not-quite-black);
+    color: #fff;
+    color: var(--white);
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.ButtonOpenBrowser:hover {
+    background-color: hsl(220,7.7%,22.9%);
+    background-color: hsl(220,calc(var(--saturation-factor, 1)*7.7%),22.9%);
+    box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+}  
 
 .HeaderBackground {
     position: relative;
