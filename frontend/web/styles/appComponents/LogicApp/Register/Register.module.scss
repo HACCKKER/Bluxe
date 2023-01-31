@@ -11,28 +11,22 @@
             min-width: 480px;
             padding: 32px;
 
-            .button{
+            .topBackButton{
                 position: relative;
+                cursor: pointer;
+                margin-bottom: 1rem;
 
-                .contents{
-                    &::after{
-                        content: '';
-                        height: 0.125rem;
-                        width: 0;
-                        position: absolute;
-                        background-color: #fff;
-                        transition-property: all;
-                        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-                        transition-duration: 150ms;
-                        // @apply w-0 absolute left-0 -bottom-3 h-0.5 bg-black transition-all duration-500;
-
-                        .content{
-                            display: flex;
-                        }
-                    }
+                .contentButton{
+                    max-width: 70px;
                 }
+
             }
 
+            .formHeading{
+                color: #fff;
+                display: flex;
+                justify-content: center;
+            }
 
         }
     }

@@ -1,0 +1,31 @@
+.backButton{
+    display: flex;
+    align-items: center;
+    overflow:hidden ;
+    border-radius: 200rem ;
+    color: #fff;
+    padding: 2px 0 2px 0;
+
+    >svg{
+        margin: 0 9px 6px 0;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(187deg) brightness(104%) contrast(102%);
+    }
+    
+    &::after{
+        max-width: 70px;
+        content: '';
+        width: 0;
+        position: absolute;
+        height: 0.125rem;
+        background-color: #fff;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0ms;
+        bottom: -0.15rem;
+                                // @apply w-0 absolute left-0 -bottom-3 h-0.5 bg-black transition-all duration-500;
+    }
+
+    &:hover::after{
+        width: 100%;
+    }
+}

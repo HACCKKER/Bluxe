@@ -12,6 +12,11 @@ body, html, #__next {
     -ms-overflow-style: none;
 }
 
+button, input{
+    border: none;
+    outline: 0;
+}
+
 body::-webkit-scrollbar {
     width: 0;
 }
