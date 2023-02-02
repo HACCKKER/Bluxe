@@ -75,14 +75,11 @@
         line-height: 24px;
         cursor: pointer;
     }
-    :hover {
-        a {    
-            transition: 0.2s;
-            -webkit-box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
-            box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
-            transition: 0.2s;
-            color: rgb(234, 0, 255);
-        }    
+    a:hover {
+        transition: 0.2s;
+        -webkit-box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+        box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+        transition: 0.2s;
+        color: rgb(234, 0, 255);   
     }
-
 }
