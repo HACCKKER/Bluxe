@@ -10,7 +10,11 @@ body, html, #__next {
     height: 100%;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+
+
 
 button, input{
     border: none;
@@ -21,9 +25,13 @@ body::-webkit-scrollbar {
     width: 0;
 }
 
-a {
+a{
     color: #F8F8F8;
     font-family: 'Iceland', cursive;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
+}
+
+h1{
+    font-family:  "Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }

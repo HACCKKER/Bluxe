@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import styles from '../../../styles/appComponents/LogicApp/Register/Register.module.scss'
+import styles from '../../../styles/appComponents/LogicApp/Auth/Auth.module.scss'
 import BackButton from "../../Ui/Auth/Buttons/BackButtonUi/BackButton";
+import SubmitButton from "../../Ui/Auth/Buttons/SumbitButtonUi/SubmitButton";
 import FieldForm from "../../Ui/Auth/Field/FieldForm";
 import { IAuthFields } from "./interfaces/reg-login-form.interface";
 
@@ -24,7 +26,7 @@ const RegisterComponent: FC = () => {
         <div className={styles.wrapper}>
             <div className={styles.loginForm}>
                 <form>
-                    <div className={styles.topBackButton}>
+                <div className={styles.topBackButton}>
                         <div className={styles.contentButton}>
                             <BackButton/>
                         </div>
@@ -33,8 +35,7 @@ const RegisterComponent: FC = () => {
 
                     <div className={styles.formBlock}>
                         <div className={styles.emailBlock}>
-                            <label className={styles.formLabel}>Электронаня почта</label>
-                            
+                            <label className={styles.formLabel}>Электронаня почта</label>  
                             <FieldForm
                             {...register('email', {
                                 required: true,
@@ -51,7 +52,6 @@ const RegisterComponent: FC = () => {
                             />
 
                              <label className={styles.formLabel}>Пароль</label>
-                            
                             <FieldForm
                             {...register('password', {
                                 required: true,
@@ -59,6 +59,15 @@ const RegisterComponent: FC = () => {
                             })}
                             />
 
+                            <div className={styles.submitFormButton}>
+                                <SubmitButton/>
+                            </div>
+
+                            <div className={styles.haveAccount}>
+                                <Link className={styles.LinkBack} href='/auth/register'>
+                                    Уже есть аккаунт?
+                                </Link>
+                            </div>
 
                         </div>
                     </div>

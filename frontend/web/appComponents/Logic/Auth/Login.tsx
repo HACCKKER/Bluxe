@@ -1,16 +1,64 @@
+import Link from "next/link";
 import { FC } from "react";
-import { IAuthFields } from './interfaces/reg-login-form.interface';
-import styles from '../../../styles/appComponents/LogicApp/Login/Login.module.scss'
+import { SubmitHandler, useForm } from "react-hook-form";
+import styles from '../../../styles/appComponents/LogicApp/Auth/Auth.module.scss'
+import SubmitButton from "../../Ui/Auth/Buttons/SumbitButtonUi/SubmitButton";
+import FieldForm from "../../Ui/Auth/Field/FieldForm";
+import { IAuthFields } from "./interfaces/reg-login-form.interface";
 
-const Login: FC = () => {
+const LoginComponent: FC = () => {
+
+    const{
+        register,
+        formState: {errors},
+        handleSubmit,
+        reset
+        } = useForm<IAuthFields>({
+            mode: "onSubmit"
+        })
+    
+        const onSubmit:SubmitHandler<IAuthFields> = (data) =>{
+            reset()
+        }
+
+
     return(
         <div className={styles.wrapper}>
             <div className={styles.loginForm}>
                 <form className={styles.form}>
-                    <div className={styles.contentForm}>
-                        <div className={styles.leftContent}>
+                <h1 className={styles.formHeading}>С возвращением</h1>
+                    <div className={styles.formBlock}>
+                      <div className={styles.leftContent}>
+                        <div className={styles.emailBlock}>
+                            <label className={styles.formLabel}>Электронаня почта</label>  
+                            <FieldForm
+                            {...register('email', {
+                                required: true,
+
+                            })}
+                            />
+
+
+                             <label className={styles.formLabel}>Пароль</label>
+                            <FieldForm
+                            {...register('password', {
+                                required: true,
+
+                            })}
+                            />
+
+                            <div className={styles.submitFormButton}>
+                                <SubmitButton/>
+                            </div>
+
+                            <div className={styles.haveAccount}>
+                                <Link className={styles.LinkBack} href='/auth/register'>
+                                    Уже есть аккаунт?
+                                </Link>
+                            </div>
 
                         </div>
+                      </div>
 
                         <div className={styles.rightContent}>
 
@@ -21,3 +69,5 @@ const Login: FC = () => {
         </div>
     )
 }
+
+export default LoginComponent

@@ -1,3 +1,7 @@
+:root{
+  --background-form:#36393f;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
