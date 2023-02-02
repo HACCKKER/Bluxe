@@ -52,8 +52,9 @@ const LoginComponent: FC = () => {
                             </div>
 
                             <div className={styles.haveAccount}>
+                                Нужен аккаунт?
                                 <Link className={styles.LinkBack} href='/auth/register'>
-                                    Уже есть аккаунт?
+                                    Зарегестрироваться
                                 </Link>
                             </div>
 

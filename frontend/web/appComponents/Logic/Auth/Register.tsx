@@ -64,7 +64,7 @@ const RegisterComponent: FC = () => {
                             </div>
 
                             <div className={styles.haveAccount}>
-                                <Link className={styles.LinkBack} href='/auth/register'>
+                                <Link className={styles.LinkBack} href='/auth/login'>
                                     Уже есть аккаунт?
                                 </Link>
                             </div>

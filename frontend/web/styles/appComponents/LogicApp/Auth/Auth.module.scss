@@ -66,11 +66,14 @@
 
                 .haveAccount{
                     display: flex;
+                    align-items: center;
                     margin-top: 20px;
+                    color: #afafaf;
 
                     .LinkBack{
                         color:  hsl(197, 100%, 47.8%);
                         font-size: 15px;
+                        margin-left: 5px;
                     }
 
                     
