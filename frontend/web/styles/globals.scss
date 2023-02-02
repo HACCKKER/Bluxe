@@ -21,6 +21,14 @@
     --page-max-width: 1260px;
     --brand: #5865f2;
     --brand-gradient: linear-gradient(90deg,#8ea1e1,#7289da);
+    --fg: #e3e4e8;
+    --shade1: #23252a;
+    --shade2: #3e424c;
+    --shade3: #4a4e5a;
+    --shade4: #686e7e;
+	--dur1: 1s;
+	--dur2: 6s;
+	font-size: calc(16px + (32 - 16)*(100vw - 320px)/(2560 - 320));
 }
 
 * {

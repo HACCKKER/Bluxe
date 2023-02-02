@@ -1,7 +1,7 @@
 export const JwtCheck = async ({token}) => {
-    const response = await fetch("http://localhost:4000/auth/jwtcheck", {
+    const response = await fetch(`${process.env.BACKEND_LINK}/auth/jwtcheck`, {
         headers: {
-            'Authorization': `Bearer token`  
+            'Authorization': `Bearer ${token}`  
         } 
     })
     const data = await response.json()

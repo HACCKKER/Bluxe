@@ -1,20 +1,34 @@
-import Link from 'next/link'
-import { useState, useRef} from 'react'
-import Header from '../appComponents/Logic/Meta/Header'
-import MainNavBar from '../appComponents/Ui/NavBars/MainNavBar/MainNavBar'
-import styles from '../styles/pages/Home.module.scss'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useState, useRef } from 'react';
+import Header from '../appComponents/Logic/Meta/Header';
+import MainNavBar from '../appComponents/Ui/NavBars/MainNavBar/MainNavBar';
+import styles from '../styles/pages/Home.module.scss';
 
-export default function Home() {
+export default function Home({data}) {
+  const Router = useRouter()
+  console.log(data)
   const [MenuActive, setMenuActive] = useState(false);
   const [ErrorInputUsername, setErrorInputUsername] = useState(false)
+  const [MessageError, setMessageError] = useState('')
   const InputUsername = useRef(null)
 
   const ValidateUsernameInput = () => {
     if (InputUsername.current.value) {
-      console.log(InputUsername.current.value)
-      setErrorInputUsername(false)
+      if (InputUsername.current.value.length >= 2) {
+        const AppPush = () => {
+          Router.push('/app')
+        }
+        console.log(InputUsername.current.value)
+        setErrorInputUsername(false)
+        setTimeout(AppPush, 2000)
+      } else {
+        setErrorInputUsername(true)
+        setMessageError('Длина должна быть от 2 до 32.')
+      }
     } else {
       setErrorInputUsername(true)
+      setMessageError('Полегче, дружище. Сначала назовитесь.')
     }
   }
   return (
@@ -44,7 +58,7 @@ export default function Home() {
                         <div className={styles.ErrorTextForm}>
                           <div className={styles.Error}>
                             <a className={styles.ErrorText}>
-                              Полегче, дружище. Сначала назовитесь.
+                              {MessageError}
                             </a>
                           </div>
                           <svg width="16" height="9" viewBox="0 0 16 9">
@@ -70,11 +84,11 @@ export default function Home() {
                   <div className={styles.DocumentContainer}>
                     <div className={styles.DocumentText}>
                       <a> Регистрируясь, вы соглашаетесь с </a>
-                      <Link className={styles.Link} href=''> 
+                      <Link className={styles.Link} href='#'> 
                         Условиями Использования
                       </Link>
                       <a> и </a>
-                      <Link className={styles.Link} href=''>
+                      <Link className={styles.Link} href='#'>
                         Политикой Конфиденциальности
                       </Link>
                       <a> Bluxe</a>
@@ -119,4 +133,10 @@ export default function Home() {
       </div>
     </>
   )
+}
+
+export async function getServerSideProps() {      
+  const response = await fetch('https://ipapi.co/json/')
+  const data = await response.json()
+  return { props: {data}, }
 }
