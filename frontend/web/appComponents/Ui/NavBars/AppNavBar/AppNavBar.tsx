@@ -34,7 +34,7 @@ const AppNavBar: FC<PropsWithChildren> = ({children}) => {
                     className={styles.HrButtonTop} 
                 />
                 <ul className={styles.ContainerButtons}>
-                    <UserServers />
+                    
                 </ul>
             </nav> 
             <div>

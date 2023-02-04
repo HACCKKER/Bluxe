@@ -1,27 +1,21 @@
 import Link from "next/link";
-import { FC, useEffect, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { FC, useEffect, useRef, useState } from "react";
 import styles from '../../../styles/appComponents/LogicApp/Auth/Auth.module.scss'
-import SubmitButton from "../../Ui/Auth/Buttons/SumbitButtonUi/SubmitButton";
-import FieldForm from "../../Ui/Auth/Field/FieldForm";
+
 import { IAuthFields } from "./interfaces/reg-login-form.interface";
 
 const LoginComponent: FC = () => {
 
+    const emailInput = useRef(null)
+    const passwordInput = useRef(null)
+
     const [isLoading, setIsLoading] = useState(false)
 
-    const{
-        register,
-        formState: {errors},
-        handleSubmit,
-        reset
-        } = useForm<IAuthFields>({
-            mode: "onSubmit"
-        })
-    
-        const onSubmit:SubmitHandler<IAuthFields> = (data) =>{
-            reset()
-        }
+    const AuthValidateInputs = () =>{
+        console.log(emailInput.current.value)
+    }
+
+
 
         useEffect(() =>{
             setIsLoading(true)
@@ -40,26 +34,23 @@ const LoginComponent: FC = () => {
                     <div className={styles.formBlock}>
                       <div className={styles.leftContent}>
                         <div className={styles.emailBlock}>
-                            <label className={styles.formLabel}>Электронаня почта</label>  
-                            <FieldForm
-                            {...register('email', {
-                                required: true,
 
-                            })}
-                            />
+                            <label className={styles.formLabel}>Электронаня почта</label>  
+                            <div className={styles.input}>
+                                <input type="text" ref={emailInput} />
+                            </div>
 
 
                              <label className={styles.formLabel}>Пароль</label>
-                            <FieldForm
-                            {...register('password', {
-                                required: true,
-
-                            })}
-                            />
-
-                            <div className={styles.submitFormButton}>
-                                <SubmitButton/>
+                            <div className={styles.input}>
+                                <input type="text" ref={passwordInput} />
                             </div>
+
+                            <Link href="/@me">
+                            <div className={styles.submitFormButton}>
+                                <button type='button' onClick={AuthValidateInputs}>Войти</button>
+                            </div>
+                            </Link>
 
                             <div className={styles.haveAccount}>
                                 Нужен аккаунт?
