@@ -3,18 +3,9 @@ import styles from '../../../../styles/appComponents/UiApp/Auth/Fields/FieldForm
 import { IField } from "../../../Logic/Auth/interfaces/field.interface";
 
 
-const FieldForm = forwardRef<HTMLInputElement, IField> (
-    ({ error, type = 'text', style, ... rest }, ref) => {
-        return(    
-            <div className={styles.input} style={style}>
-                <input ref={ref} type={type} {... rest}/>
-                {error && <div className={styles.error}>{error.message}</div>}
-            </div>
-        
-        )
-    }
-)
-    
-FieldForm.displayName = 'Field'
+const FieldForm = () =>{
+    return <div></div>
+}
+
 
 export default FieldForm
