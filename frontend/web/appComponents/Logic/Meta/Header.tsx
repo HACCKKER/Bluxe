@@ -16,7 +16,7 @@ const Header: FC<IHeader> = ({description, title_description}) => {
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/Logo/Logo.png" />
-      <title>Bluxe {title_description}</title>
+      <title>{`Bluxe ${title_description}`}</title>
     </Head>
   )
 }
