@@ -39,7 +39,7 @@ const RegisterComponent: FC = () => {
                             <BackButton/>
                         </div>
                     </div>
-                    <h1 className={styles.formHeading}>Создать аккаунт</h1>
+                    <h1 className={styles.formHeading}>Создать аккаунт </h1>
 
                     <div className={styles.formBlock}>
                         <div className={styles.emailBlock}>
