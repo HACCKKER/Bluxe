@@ -3,9 +3,9 @@
 .nav {
     display: inline-flex;
     position: fixed;
-    background: #101011;
+    background: #151517;
     width: 100%;
-    height: 78px;
+    height: 24px;
 }
 
 .menu {
@@ -13,10 +13,100 @@
     align-items: center;
     flex-direction: column;
 	position: fixed;
-    padding-top: 5px;
-	left: 0;
-	width: 100px;
+	width: 79px;
 	height: 100%;
 	padding: 0;
-    background: #101011;
+    background: #151517;
+}
+
+.IconButton {
+    margin-left: -5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button {
+    width: 52px;
+    height: 52px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.ButtonContainer {
+    margin-top: 10px;
+    width: 100%;
+    height: 52px;
+    display: flex;
+    justify-content: space-between;    
+}
+
+.TopButton {
+    width: 100%;
+    height: 52px;
+}
+
+.HrButtonTop {
+    margin-top: 10px;
+    width: 55%;
+    height: 1px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.ButtonContainer:hover {
+    .Button .ButtonActiveHr {
+        transition: 0.4s;
+        border-radius: 15px;        
+    }
+    .ButtonActiveHr {
+        hr {
+            transform: scale(1);
+            transition: 0.4s;
+            height: 45%;
+            width: 3px;
+            background-color: #fff;
+            border-radius: 0 5px 5px 0;
+        }   
+    }
+}
+
+.ButtonContainer.Active {
+    .ButtonActiveHr {
+        hr {
+            transform: scale(1);
+            transition: 0.4s;
+            height: 85%;
+            width: 3px;
+            background-color: #fff;
+            border-radius: 0 5px 5px 0;
+        }
+    }
+    .IconButton .Button {
+        border-radius: 15px;
+    }
+}
+
+.ContainerButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.ButtonActiveHr {
+    width: 5px;
+    display: flex;
+    align-items: center;
+    hr {
+        transform: scale(0);
+    }
 }
