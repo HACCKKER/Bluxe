@@ -19,15 +19,18 @@ const RegisterComponent: FC = () => {
         console.log(usernameInput.current.value)
     }
 
+    // Auth_wrapper__LktBF
+
 
     useEffect(() =>{
-        setIsLoading(true)
+        const wrapper = document.querySelector('#wrapperContent');
+        wrapper.classList.add('Auth_color__K82kk');
     }, [])
 
 
     return(
         <>
-        <div className={styles.wrapper}>   
+        <div className={styles.wrapper} >   
             <div className={styles.loginForm}>
                 <form>
                 <div className={styles.topBackButton}>
@@ -44,7 +47,7 @@ const RegisterComponent: FC = () => {
                                 <input type="text" ref={emailInput} />
                             </div>
 
-                            <label className={styles.formLabel}>Имя пользователя</label>
+                            <label  id='wrapperContent' className={styles.formLabel}>Имя пользователя</label>
                             <div className={styles.input}>
                                 <input type="text" ref={usernameInput} />
                             </div>

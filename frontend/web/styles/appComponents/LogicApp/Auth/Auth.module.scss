@@ -1,5 +1,10 @@
-.wrapperAnim{
-    transform: scale(1) translateY(0px) translateZ(0px);  
+
+.Auth_formLabel__K82kk{
+    color: #fff !important; 
+}
+.Auth_animate__UirTN{
+    transform: scale(1) translateY(0px) translateZ(0px); 
+    transition: 5s; 
 }
 .wrapper{
     width: 100%;
@@ -47,11 +52,13 @@
 
             .formBlock{ 
                 margin-top: 30px;
+
                 .formLabel{
                     color: #afafaf;
                     font-family: "Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 
                 }
+
 
                 .input{
                     margin: 10px 0 25px 0;
