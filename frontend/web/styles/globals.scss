@@ -1,5 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Roboto:wght@300;400&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@media screen and (min-width: 768px){
+    :root {
+        --num-grid-columns: 8;
+        --page-gutter: 40px;
+        --section-spacing: 80px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --num-grid-columns: 12;
+        --section-spacing: 120px;
+    }
+}
+
+:root {
+    --off-white: #f6f6f6;
+    --white: #f6f6f6;
+    --not-quite-black: #23272a;
+    --page-max-width: 1260px;
+    --brand: #5865f2;
+    --brand-gradient: linear-gradient(90deg,#8ea1e1,#7289da);
+    --fg: #e3e4e8;
+    --shade1: #23252a;
+    --shade2: #3e424c;
+    --shade3: #4a4e5a;
+}
 
 * {
     margin: 0;
@@ -21,11 +47,12 @@ button, input{
     outline: 0;
 }
 
-body::-webkit-scrollbar {
-    width: 0;
+body {
+    text-rendering: optimizeLegibility;
 }
 
 a{
+a, h1, h2, h3, h4, h5, h6, p {
     color: #F8F8F8;
     font-family: 'Iceland', cursive;
     font-family: 'Roboto', sans-serif;
@@ -34,4 +61,10 @@ a{
 
 h1{
     font-family:  "Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
 }
