@@ -1,0 +1,7 @@
+**/.env
+**/.git
+**/.gitignore
+**/.dockerignore
+**/Dockerfile*
+README.md
+bluxe
