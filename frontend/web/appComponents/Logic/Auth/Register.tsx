@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FC } from "react";
+import { FC, use, useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import styles from '../../../styles/appComponents/LogicApp/Auth/Auth.module.scss'
 import BackButton from "../../Ui/Auth/Buttons/BackButtonUi/BackButton";
@@ -8,6 +8,8 @@ import FieldForm from "../../Ui/Auth/Field/FieldForm";
 import { IAuthFields } from "./interfaces/reg-login-form.interface";
 
 const RegisterComponent: FC = () => {
+
+    const [isLoading, setIsLoading] = useState(false)
 
     const{
     register,
@@ -22,8 +24,14 @@ const RegisterComponent: FC = () => {
         reset()
     }
 
+    useEffect(() =>{
+        setIsLoading(true)
+    }, [])
+
+
     return(
-        <div className={styles.wrapper}>
+        <>
+        <div className={styles.wrapper}>   
             <div className={styles.loginForm}>
                 <form>
                 <div className={styles.topBackButton}>
@@ -74,7 +82,14 @@ const RegisterComponent: FC = () => {
                 </form>
             </div>
         </div>
+
+      
+       </>
     )
+
+
 }
+
+
 
 export default RegisterComponent
