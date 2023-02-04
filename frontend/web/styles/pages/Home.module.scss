@@ -1,4 +1,338 @@
-.main {
-  max-width: 100%;
-  max-height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+
+.HeaderContainer {
+    background: #404eed;
+    position: relative;
+    min-height: 626px;
+    overflow: hidden;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        padding-bottom: 56px;
+        padding-bottom: 80px;
+        min-height: 626px;
+    }
+}
+
+.MainContainer {
+    max-width: 100%;
+    height: 100%;
+    a {
+        font-family: 'Nunito Sans', sans-serif;
+    }
+}
+
+.HeroContainer {
+    padding-top: 56px;
+    padding-top: var(--section-spacing);
+    padding-bottom: 56px;
+    padding-bottom: var(--section-spacing);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.HeroBody {
+    z-index: 1;
+    grid-column: span 4;
+    max-width: 780px;
+    min-height: 310px;
+    max-height: 470px;
+    @media screen and (min-width: 1024px) {
+        grid-column: 3/span 8;
+        text-align: center; 
+    }
+    @media screen and (min-width: 768px) {
+        grid-column: span 5;  
+    }
+}
+
+.HeaderText {
+    color: #fff;
+    color: var(--white);
+    @media screen and (min-width: 768px) {
+        margin-bottom: 8px; 
+    }
+}
+
+.h1 {
+    font-weight: 800;
+    @media screen and (min-width: 768px) {
+        font-size: 56px;  
+    }
+}
+
+.HeroSubtitle {
+    width: 780px;
+    font-size: 20px;
+    font-size: clamp(16px,2vw,20px);
+    line-height: 1.625;
+    @media screen and (min-width: 1024px) {
+        margin-top: 40px;
+    }
+    @media screen and (min-width: 768px) {
+        margin-top: 40px;
+    }
+}
+
+.HeaderContainerButton {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;  
+    @media screen and (min-width: 1024px) {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+.ButtonDownload {
+    svg {
+        margin-right: 6px;    
+    }
+    margin-right: 24px;
+    margin-top: 24px;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    background-color: #fff;
+    background-color: var(--white);
+    color: #23272a;
+    color: var(--not-quite-black);
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    transition-duration: 0.2s;
+}
+
+.ButtonDownload:hover {
+    box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+    color: #5865f2;
+    color: var(--brand);
+}
+
+.FormContainer {
+    @media screen and (min-width: 1024px) {
+        align-items: center;
+    }
+    @media screen and (max-width: 768px) {
+        align-items: flex-start;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+    flex-direction: column;
+}
+
+.DocumentContainer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.Form, .Username {
+    width: 100%;
+    background-color: #f6f6f6;
+    background-color: var(--off-white);
+}
+
+.Form {
+    max-width: 380px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    border-radius: 28px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.Username {
+    margin-left: 32px;
+    color: #23272a;
+    color: var(--not-quite-black);
+    border: none;
+    outline: none;
+}
+
+.RegisterButton {
+    background-color: #5865f2;
+    background-color: var(--brand);
+    color: #fff;
+    color: var(--white);
+    border-radius: 50%;
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    transition-property: background-color,color,-webkit-box-shadow;
+    transition-property: background-color,color,box-shadow;
+    transition-property: background-color,color,box-shadow,-webkit-box-shadow;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    margin: 9px;
+    padding: 7px 18px;
+}
+
+.RegisterButton:hover {
+    box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+    background-color: hsl(235,86.1%,71.8%);
+    background-color: hsl(235,calc(var(--saturation-factor, 1)*86.1%),71.8%);
+}
+
+.ErrorTextForm {
+    position: absolute;
+    bottom: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.Error {
+    background-color: #fff;
+    background-color: var(--white);
+    border-radius: 4px;
+
+    padding: 12px 20px;
+}
+
+.ErrorText {
+    font-size: 14px;
+    line-height: 18px;    
+    color: #c80000;
+}
+
+.Arrow {
+    width: 24px;
+    height: 24px;
+}
+
+.DocumentText {
+    color: #fff;
+    color: var(--white);
+    font-size: 14px;
+    line-height: 18px;
+    .Link {
+        text-decoration: underline;
+    }
+}
+
+.ButtonOpenBrowser {
+    margin-top: 24px;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    background-color: #23272a;
+    background-color: var(--not-quite-black);
+    color: #fff;
+    color: var(--white);
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.ButtonOpenBrowser:hover {
+    background-color: hsl(220,7.7%,22.9%);
+    background-color: hsl(220,calc(var(--saturation-factor, 1)*7.7%),22.9%);
+    box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+}  
+
+.HeaderBackground {
+    position: relative;
+    z-index: 0;
+    user-select: none;
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.BackgroundImages {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    @media screen and (min-width: 1024px) {
+        margin-left: -1280px;
+    }
+
+    @media screen and (min-width: 768px) {
+        top: auto;
+        bottom: 0;
+        margin-left: -1320px;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .ForegroundLeft {
+        bottom: 0;
+        position: absolute;
+        left: 50%;
+        display: block;
+        height: auto;
+        width: auto;
+        max-width: none;
+        margin-left: -1030px;
+        transform: none;
+    }
+}
+
+.ForegroundLeft {
+    bottom: 0;
+    display: block;
+    width: 100%;
+    max-width: 880px;
+    position: relative;
+    z-index: 1;
+    margin-left: -80px;
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+     
+@media screen and (min-width: 1024px) {
+   .ForegroundRight {
+        display: block;
+        bottom: 0;
+        left: 50%;
+        margin-left: 370px;
+    }
+}
+
+.ForegroundRight {
+    position: absolute;
+    bottom: 0;
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: block;
+        bottom: 0;
+        left: 50%;
+        margin-left: -70px;
+    }
 }
