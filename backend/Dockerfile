@@ -1,21 +1,26 @@
-# build stage
 FROM nimlang/nim:latest as builder
+
+RUN apt update -y && apt upgrade -y
 
 WORKDIR /app
 
-COPY . .
+COPY . /app
 
 RUN nimble build -y
 
-# run stage
-FROM alpine:latest
+FROM ubuntu:latest
+
+RUN apt update -y && apt upgrade -y
+
+RUN apt install libsqlite3-dev -y
 
 WORKDIR /app
 
 COPY --from=builder /app/bluxe ./
 
-RUN chmod +x bluxe
+RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
+USER appuser
 
 EXPOSE 8080
 
-CMD [ "bluxe" ]
+CMD ["./bluxe"]
