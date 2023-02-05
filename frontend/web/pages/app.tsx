@@ -9,22 +9,22 @@ export default function App() {
     const [isLoadingData, setIsLoadingData] = useState(false)
     const token = ''
 
-    useEffect(() => {
-        if(token) {
-            useEffect(() => {
-                (async () => {
-                    const data = JwtCheck({token})
-                    setIsLoadingData(true)
-                })()
-            }, [])
-        } else {
-            Router.push('/auth/login')    
-        }
+    // useEffect(() => {
+    //     if(token) {
+    //         useEffect(() => {
+    //             (async () => {
+    //                 const data = JwtCheck({token})
+    //                 setIsLoadingData(true)
+    //             })()
+    //         }, [])
+    //     } else {
+    //         Router.push('/auth/login')    
+    //     }
 
-        if (isLoadingData == true) {
-            Router.push('/channels/@me')    
-        }        
-    }, [])
+    //     if (isLoadingData == true) {
+    //         Router.push('/channels/@me')    
+    //     }        
+    // }, [])
 
     return (
         <>

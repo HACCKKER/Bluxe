@@ -1,127 +1,131 @@
-
-.Auth_formLabel__K82kk{
-    color: #fff !important; 
-}
-.Auth_animate__UirTN{
-    transform: scale(1) translateY(0px) translateZ(0px); 
-    transition: 5s; 
-}
 .wrapper{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    opacity: 1;
-    transform: scale(1) translateY(-20px) translateZ(-20px);   
-    transition: 5s;
-
-    .loginForm{
-        
-
-        box-shadow: 2px 3px 10px 5px rgba(0, 0, 0, 0.1);
-        
-        >form{
-            background-color: #36393f;
-            border-radius: 4px;
-            min-width: 420px;
-            padding: 32px;
-            .topBackButton{
-                position: relative;
-                cursor: pointer;
-                margin-bottom: 1rem;
-
-                .contentButton{
-                    max-width: 70px;
-                }
-
-            }
-
-            .formHeading{
-                color: #fff;
-                font-size: 24px;
-                display: flex;
-                justify-content: center;
-                font-weight: 600;
-                line-height: 30px;
-                letter-spacing: 0.5px;
-
-            }
-
-            .formBlock{ 
-                margin-top: 30px;
-
-                .formLabel{
-                    color: #afafaf;
-                    font-family: "Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-
-                }
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
 
 
-                .input{
-                    margin: 10px 0 25px 0;
-                
-                    >input{
-                        width: 100%;
-                        padding: 3px 0 3px 10px;
-                        border-radius: 4px;
-                        background-color: #1D2125;
-                        height: 35px;
-                        color: #afafaf;
-                        font-size: 16px;
+        .loginForm{
+            
+            opacity: 0.3;
+            transform: scale(1.03) translateY(-80px) translateZ(-100px);   
+            transition: .32s;
+            box-shadow: 2px 3px 10px 5px rgba(0, 0, 0, 0.1);
+            
+            >form{
+                background-color: #36393f;
+                border-radius: 4px;
+                min-width: 420px;
+                padding: 32px;
+                .topBackButton{
+                    position: relative;
+    
+                    margin-bottom: 1rem;
+    
+                    .contentButton{
+                        max-width: 70px;
                     }
+    
                 }
-
-                .submitFormButton{
+    
+                .formHeading{
+                    color: #fff;
+                    font-size: 24px;
                     display: flex;
                     justify-content: center;
+                    font-weight: 600;
+                    line-height: 30px;
+                    letter-spacing: 0.5px;
+    
+                }
+    
+                .formBlock{ 
+                    margin-top: 30px;
+    
+                    .formLabel{
+                        color: #afafaf;
+                        font-family: "Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+                    }
+    
+    
+                    .input{
+                        margin: 10px 0 25px 0;
                     
-                    >button{
-                        width: 100%;
-                        padding: 15px 2px 15px 2px ;
-                        border-radius: 3px;
-                        background-color: #5865f2;
+                        >input{
+                            width: 100%;
+                            padding: 3px 0 3px 10px;
+                            border-radius: 4px;
+                            background-color: #1D2125;
+                            height: 35px;
+                            color: #afafaf;
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .submitFormButton{
+                        display: flex;
+                        justify-content: center;
                         
-                        color: #fff;
-                        font-size: 16px;
-                        font-weight: 500;
-                        transition: .2s;
+                        >button{
+                            width: 100%;
+                            padding: 15px 2px 15px 2px ;
+                            border-radius: 3px;
+                            background-color: #5865f2;
+                            
+                            color: #fff;
+                            font-size: 16px;
+                            font-weight: 500;
+                            transition: .2s;
+                        }
+    
+                        button:hover{
+                            background-color: #4651c3;
+                        }
+    
+                        button:active{
+                            background-color: #414aaf;
+                        }
                     }
-
-                    button:hover{
-                        background-color: #4651c3;
-                    }
-
-                    button:active{
-                        background-color: #414aaf;
+    
+                    .haveAccount{
+                        display: flex;
+                        align-items: center;
+                        margin-top: 20px;
+                        color: #afafaf;
+    
+                        .LinkBack{
+                            color:  hsl(197, 100%, 47.8%);
+                            font-size: 15px;
+                            margin-left: 5px;
+                        }
+    
+                        .LinkBack:hover{
+                            text-decoration: underline;
+                            color:  hsl(197, 100%, 47.8%);
+                            
+                        }
+    
+                        
                     }
                 }
-
-                .haveAccount{
-                    display: flex;
-                    align-items: center;
-                    margin-top: 20px;
-                    color: #afafaf;
-
-                    .LinkBack{
-                        color:  hsl(197, 100%, 47.8%);
-                        font-size: 15px;
-                        margin-left: 5px;
-                    }
-
-                    .LinkBack:hover{
-                        text-decoration: underline;
-                        color:  hsl(197, 100%, 47.8%);
-                        
-                    }
-
-                    
-                }
+    
+    
             }
-
-
         }
     }
-}
+
+
+
+    .wrapper{
+        .animate{
+            opacity: 1;
+            transform: scale(1) translateY(0px) translateZ(0px); 
+            transition: .32s; 
+        }
+    }
+

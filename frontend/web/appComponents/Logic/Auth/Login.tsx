@@ -17,18 +17,17 @@ const LoginComponent: FC = () => {
 
 
 
-        useEffect(() =>{
-            setIsLoading(true)
-        }, [])
-
+    useEffect(() =>{
+        const loginWrapper = document.querySelector('#wrapperContent');
+        loginWrapper.classList.add('Auth_animate__sHnx4')
+    }, [])
+    
 
     return(
     <>
-        {
-            isLoading ? 
         
-        <div className={styles.wrapper}>
-            <div className={styles.loginForm}>
+        <div className={styles.wrapper} >
+            <div className={styles.loginForm}  id='wrapperContent'>
                 <form className={styles.form}>
                 <h1 className={styles.formHeading}>С возвращением</h1>
                     <div className={styles.formBlock}>
@@ -70,8 +69,7 @@ const LoginComponent: FC = () => {
             </div>
         </div>
 
-        : <></>
-        }
+
     </>
     )
 }
