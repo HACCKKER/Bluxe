@@ -8,7 +8,7 @@ let
         appName = env.getOrDefault("appName", "Prologue"),
         debug = env.getOrDefault("debug", true),
         port = Port(env.getOrDefault("port", 8080)),
-        secretKey = env.getOrDefault("secretKey", "")
+        secretKey = env.getOrDefault("secretKey", "paSwort")
     )
 
 when isMainModule:
