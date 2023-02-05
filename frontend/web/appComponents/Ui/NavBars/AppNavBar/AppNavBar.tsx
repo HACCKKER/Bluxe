@@ -2,6 +2,7 @@ import styles from '../../../../styles/appComponents/UiApp/NavBars/AppNavBar.mod
 import { FC, PropsWithChildren } from 'react'
 import classNames from 'classnames';
 import Logo from '../../Assets/Icon/Logo';
+import UserServers from '../../../Logic/NavBars/UserServers';
 
 const AppNavBar: FC<PropsWithChildren> = ({children}) => {
 
@@ -34,7 +35,7 @@ const AppNavBar: FC<PropsWithChildren> = ({children}) => {
                     className={styles.HrButtonTop} 
                 />
                 <ul className={styles.ContainerButtons}>
-                    <UserServers />
+                    
                 </ul>
             </nav> 
             <div>

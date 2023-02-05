@@ -8,8 +8,6 @@
     grid-column: span var(--num-grid-columns);
     @media screen and (min-width: 1024px) {
         display: grid;        
-        display: -webkit-box;
-        display: -ms-flexbox;
     }
 
     @media screen and (max-width: 1023px) {
@@ -18,8 +16,6 @@
 }
 
 .Nav {
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     width: 100%;
     height: 80px;

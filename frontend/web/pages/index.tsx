@@ -4,23 +4,27 @@ import { useState, useRef } from 'react';
 import Header from '../appComponents/Logic/Meta/Header';
 import MainNavBar from '../appComponents/Ui/NavBars/MainNavBar/MainNavBar';
 import styles from '../styles/pages/Home.module.scss';
+import classNames from 'classnames';
 
 export default function Home({data}) {
   const Router = useRouter()
   console.log(data)
   const [MenuActive, setMenuActive] = useState(false);
-  const [ErrorInputUsername, setErrorInputUsername] = useState(false)
-  const [MessageError, setMessageError] = useState('')
-  const InputUsername = useRef(null)
+  const [ErrorInputUsername, setErrorInputUsername] = useState(false);
+  const [MessageError, setMessageError] = useState('');
+  const [ButtonBlock, setButtonBlock] = useState(false);
+  const InputUsername = useRef(null);
 
   const ValidateUsernameInput = () => {
     if (InputUsername.current.value) {
       if (InputUsername.current.value.length >= 2) {
+        setButtonBlock(true)
+        setErrorInputUsername(false)
         const AppPush = () => {
           Router.push('/app')
         }
         console.log(InputUsername.current.value)
-        setErrorInputUsername(false)
+        
         setTimeout(AppPush, 2000)
       } else {
         setErrorInputUsername(true)
@@ -75,6 +79,7 @@ export default function Home({data}) {
                       ref={InputUsername}
                       placeholder='Введите имя пользователя'/>
                     <button 
+                      disabled={ButtonBlock}
                       type='button'
                       className={styles.RegisterButton}
                       onClick={ValidateUsernameInput}>
