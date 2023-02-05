@@ -23,8 +23,8 @@ services:
             - "5432"
     backend:
         build: backend
-        ports:
-            - "80:8080"
+        expose:
+            - "8080"
         environment:
             - DB_HOST=5432
             - DB_USER=$DB_USER
@@ -35,11 +35,11 @@ services:
         restart: always
         depends_on:
             - db
-        #     - reverseproxy
-    # reverseproxy:
-    #     build: nginx
-    #     volumes:
-    #         - "${MY_KEY}:/etc/ssl/private"
+            - reverseproxy
+    reverseproxy:
+        build: nginx
+        volumes:
+            - "${BLUXE_KEY}:/etc/ssl/private"
     # frontend:
     #     build: frontend
     #     expose:
