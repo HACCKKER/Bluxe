@@ -5,16 +5,12 @@ import os
 
 randomize()
 
-echo(getCurrentDir())
-
 if dirExists("/home/appuser/avatars") == false:
     createDir("/home/appuser/avatars")
 if dirExists("/home/appuser/avatars/users") == false:
     createDir("/home/appuser/avatars/users")
 if dirExists("/home/appuser/avatars/servers") == false:
     createDir("/home/appuser/avatars/servers")
-
-putEnv("DB_HOST", "/home/appuser/bluxe.db")
 
 let db* = getDb()
 
@@ -47,7 +43,7 @@ proc parseStringTime*(timestring: string): DateTime =
     timestring.parse("yyyy-MM-dd-hh-mm-ss")
 
 proc randomId*(): uint32 =
-    uint32(rand(1000000000..214748363))
+    uint32(rand(100000000..214748363))
 
 proc newUser*(
         username: string,
@@ -64,3 +60,5 @@ proc newUser*(
         birthdate: birthdate,
         status: 0
     )
+
+db.createTables(newUser("", "", "", ""))
