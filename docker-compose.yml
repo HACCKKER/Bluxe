@@ -40,8 +40,8 @@ services:
             - reverseproxy
     reverseproxy:
         build: nginx
-        volumes:
-            - "${BLUXE_KEY}:/etc/ssl/private"
+        # volumes:
+        #     - "${BLUXE_KEY}:/etc/ssl/private"
     # frontend:
     #     build: frontend
     #     expose:
