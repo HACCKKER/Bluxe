@@ -14,8 +14,6 @@ if dirExists("/home/appuser/avatars/servers") == false:
 
 let db* = getDb()
 
-db.exec(sql"PRAGMA journal_mode = WAL")
-
 type
   User* = ref object of Model
     userid*: uint32
