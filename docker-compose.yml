@@ -30,6 +30,8 @@ services:
             - DB_USER=$DB_USER
             - DB_PASS=$DB_PASSWORD
             - DB_NAME=postgres
+            - PROLOGUE_DEBUG=false
+            - PROLOGUE_PASSWORD=$PROLOGUE_PASSWORD
         volumes:
             - postgre-db:/home/appuser
         restart: always

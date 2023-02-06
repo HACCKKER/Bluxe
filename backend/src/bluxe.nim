@@ -1,14 +1,28 @@
 import prologue
+import os
 
 import ./urls
 
+var 
+    debug = true
+    secretKey = ""
+
+if getEnv("PROLOGUE_DEBUG", "true") == "false":
+    debug = false
+else:
+    debug = true
+
+if existsEnv("PROLOGUE_PASSWORD") == true:
+    secretKey = getEnv("PROLOGUE_PASSWORD")
+else:
+    secretKey = "PassWorD"
+
 let
-    env = loadPrologueEnv(".env")
     settings = newSettings(
-        appName = env.getOrDefault("appName", "Prologue"),
-        debug = env.getOrDefault("debug", true),
-        port = Port(env.getOrDefault("port", 8080)),
-        secretKey = env.getOrDefault("secretKey", "paSwort")
+        appName = "Bluxe",
+        debug = debug,
+        port = Port(8080),
+        secretKey = secretKey
     )
 
 when isMainModule:
