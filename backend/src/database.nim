@@ -1,16 +1,17 @@
 import norm/[model, sqlite]
+import strformat
 import random
 import times
 import os
 
 randomize()
 
-if dirExists("/home/appuser/avatars") == false:
-    createDir("/home/appuser/avatars")
-if dirExists("/home/appuser/avatars/users") == false:
-    createDir("/home/appuser/avatars/users")
-if dirExists("/home/appuser/avatars/servers") == false:
-    createDir("/home/appuser/avatars/servers")
+if dirExists(fmt"{getHomeDir()}avatars") == false:
+    createDir(fmt"{getHomeDir()}avatars")
+if dirExists(fmt"{getHomeDir()}avatars/users") == false:
+    createDir(fmt"{getHomeDir()}avatars/users")
+if dirExists(fmt"{getHomeDir()}avatars/servers") == false:
+    createDir(fmt"{getHomeDir()}avatars/servers")
 
 let db* = getDb()
 

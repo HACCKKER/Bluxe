@@ -5,17 +5,13 @@ import ./urls
 
 var 
     debug = true
-    secretKey = ""
+    secretKey = "PassWorD"
 
 if getEnv("PROLOGUE_DEBUG", "true") == "false":
     debug = false
-else:
-    debug = true
 
 if existsEnv("PROLOGUE_PASSWORD") == true:
     secretKey = getEnv("PROLOGUE_PASSWORD")
-else:
-    secretKey = "PassWorD"
 
 let
     settings = newSettings(
