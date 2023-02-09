@@ -6,12 +6,12 @@ import os
 
 randomize()
 
-if dirExists(fmt"{getHomeDir()}/avatars") == false:
-    createDir(fmt"{getHomeDir()}/avatars")
-if dirExists(fmt"{getHomeDir()}/avatars/users") == false:
-    createDir(fmt"{getHomeDir()}/avatars/users")
-if dirExists(fmt"{getHomeDir()}/avatars/servers") == false:
-    createDir(fmt"{getHomeDir()}/avatars/servers")
+if dirExists(fmt"{getHomeDir()}avatars") == false:
+    createDir(fmt"{getHomeDir()}avatars")
+if dirExists(fmt"{getHomeDir()}avatars/users") == false:
+    createDir(fmt"{getHomeDir()}avatars/users")
+if dirExists(fmt"{getHomeDir()}avatars/servers") == false:
+    createDir(fmt"{getHomeDir()}avatars/servers")
 
 let db* = getDb()
 
