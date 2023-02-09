@@ -2,6 +2,7 @@ version: '3.9'
 
 volumes:
     postgre-db:
+    content:
 
 services:
     db:
@@ -33,7 +34,7 @@ services:
             - PROLOGUE_DEBUG=false
             - PROLOGUE_PASSWORD=$PROLOGUE_PASSWORD
         volumes:
-            - postgre-db:/home/appuser
+            - content:/home/appuser
         restart: always
         depends_on:
             db:
